@@ -1,20 +1,22 @@
 package br.com.comissionamento.model;
 
-import java.math.BigDecimal;
-import java.util.Calendar;
+import org.joda.time.DateTime;
 
 public class Venda {
 	
-	private Calendar data;
-	private BigDecimal valor;
+	private DateTime data;
+	private Double valor;
 	
-	public Venda(Calendar data, BigDecimal valor) {
+	public Venda(DateTime data, Double valor) {
 		this.data = data;
 		this.valor = valor;
 	}
 	
-	public BigDecimal getValor() {
+	public Double getValor() {
 		return this.valor;
 	}
-	
+
+	public DateTime getData() {
+		return data;
+	}
 }
