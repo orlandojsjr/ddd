@@ -22,19 +22,12 @@ public class ComissaoImpl implements Comissao {
 		
 		if(!calculoLiberado(venda.getData())) return new BigDecimal("0");
 		
-		Comissionado comissionado = getComissionado(venda.getData(), comissionadoTipo);
+		BigDecimal porcentagem = TabelaComissionamentoRepository.getPorcentagem(venda.getData(), comissionadoTipo);
 
-		return new BigDecimal(venda.getValor().toString()).multiply(new BigDecimal(comissionado.getPorcentagem().toString()));
+		return new BigDecimal(venda.getValor().toString()).multiply(porcentagem);
 	}
 	
 	private boolean calculoLiberado(DateTime dataVenda) {
 		return Days.daysBetween(dataVenda, dataCalculo).getDays() >= MINIMO_DIAS_PAGAR_COMISSAO;
-	}
-	
-	private Comissionado getComissionado(DateTime dataVenda, ComissionadoTipo comissionadoTipo) {
-		for (Comissionado comissionado : TabelaComissionamentoRepository.get(dataVenda).getComissionados()) {
-			if(comissionado.getTipo() == comissionadoTipo) return comissionado;
-		}
-		throw new IllegalArgumentException("Comissionado " + comissionadoTipo + " não encontrado na tabela.");
 	}
 }
