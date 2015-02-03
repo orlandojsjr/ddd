@@ -1,4 +1,5 @@
-package br.com.comissionamento.model;
+package br.com.comissionamento.model.comissionado;
+
 
 public class Comissionado {
 	
@@ -12,5 +13,9 @@ public class Comissionado {
 
 	public Double getPorcentagem() {
 		return porcentagem;
+	}
+
+	public ComissionadoTipo getTipo() {
+		return tipo;
 	}
 }

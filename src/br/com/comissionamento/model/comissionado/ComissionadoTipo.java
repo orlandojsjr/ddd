@@ -1,4 +1,4 @@
-package br.com.comissionamento.model;
+package br.com.comissionamento.model.comissionado;
 
 public enum ComissionadoTipo {
 	CORRETORA,
