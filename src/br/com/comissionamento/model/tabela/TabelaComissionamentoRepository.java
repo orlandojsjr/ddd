@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 import br.com.comissionamento.model.comissionado.Comissionado;
 import br.com.comissionamento.model.comissionado.ComissionadoTipo;
 
-public class TabelaComissinamentoFactory {
+public class TabelaComissionamentoRepository {
 	
 	public static final List<TabelaComissionamento> tabelas;
 	private static final DateTime dataCorte = new DateTime(2014, 12, 31, 0, 0);

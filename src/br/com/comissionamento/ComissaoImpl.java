@@ -7,7 +7,7 @@ import org.joda.time.Days;
 
 import br.com.comissionamento.model.comissionado.Comissionado;
 import br.com.comissionamento.model.comissionado.ComissionadoTipo;
-import br.com.comissionamento.model.tabela.TabelaComissinamentoFactory;
+import br.com.comissionamento.model.tabela.TabelaComissionamentoRepository;
 import br.com.comissionamento.model.venda.Venda;
 
 public class ComissaoImpl implements Comissao {
@@ -32,7 +32,7 @@ public class ComissaoImpl implements Comissao {
 	}
 	
 	private Comissionado getComissionado(DateTime dataVenda, ComissionadoTipo comissionadoTipo) {
-		for (Comissionado comissionado : TabelaComissinamentoFactory.get(dataVenda).getComissionados()) {
+		for (Comissionado comissionado : TabelaComissionamentoRepository.get(dataVenda).getComissionados()) {
 			if(comissionado.getTipo() == comissionadoTipo) return comissionado;
 		}
 		throw new IllegalArgumentException("Comissionado " + comissionadoTipo + " não encontrado na tabela.");
