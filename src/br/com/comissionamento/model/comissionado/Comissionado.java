@@ -19,3 +19,4 @@ public class Comissionado {
 		return tipo;
 	}
 }
+

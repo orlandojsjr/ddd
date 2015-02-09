@@ -34,3 +34,4 @@ public class TabelaComissionamentoRepository {
 		return dataVenda.isAfter(dataCorte) ? tabelas.get(1) : tabelas.get(0);
 	}
 }
+

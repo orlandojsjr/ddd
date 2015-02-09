@@ -72,3 +72,4 @@ public class ComissaoTest {
 		assertEquals(new BigDecimal("0"), valorComissaoGerente);
 	}
 }
+

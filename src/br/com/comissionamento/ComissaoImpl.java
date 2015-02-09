@@ -38,3 +38,4 @@ public class ComissaoImpl implements Comissao {
 		throw new IllegalArgumentException("Comissionado " + comissionadoTipo + " não encontrado na tabela.");
 	}
 }
+

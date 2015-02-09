@@ -8,3 +8,4 @@ import br.com.comissionamento.model.venda.Venda;
 public interface Comissao {
 	BigDecimal calcular(Venda venda, ComissionadoTipo ComissionadoTipo);
 }
+

@@ -5,3 +5,4 @@ public enum ComissionadoTipo {
 	GERENTE_CORRETORA, 
 	CORRETOR
 }
+
