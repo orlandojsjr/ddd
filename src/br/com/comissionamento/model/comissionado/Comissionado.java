@@ -1,17 +1,19 @@
 package br.com.comissionamento.model.comissionado;
 
+import java.math.BigDecimal;
+
 
 public class Comissionado {
 	
-	private Double porcentagem;
+	private BigDecimal porcentagem;
 	private ComissionadoTipo tipo;
 	
-	public Comissionado(Double porcentagem, ComissionadoTipo tipo) {
+	public Comissionado(BigDecimal porcentagem, ComissionadoTipo tipo) {
 		this.porcentagem = porcentagem;
 		this.tipo = tipo;
 	}
 
-	public Double getPorcentagem() {
+	public BigDecimal getPorcentagem() {
 		return porcentagem;
 	}
 
