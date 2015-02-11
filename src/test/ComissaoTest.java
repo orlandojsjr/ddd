@@ -9,7 +9,9 @@ import org.junit.Test;
 
 import br.com.comissionamento.Comissao;
 import br.com.comissionamento.ComissaoImpl;
-import br.com.comissionamento.model.comissionado.ComissionadoTipo;
+import br.com.comissionamento.model.comissionado.Corretor;
+import br.com.comissionamento.model.comissionado.Corretora;
+import br.com.comissionamento.model.comissionado.Gerente;
 import br.com.comissionamento.model.venda.Venda;
 
 public class ComissaoTest {
@@ -21,9 +23,9 @@ public class ComissaoTest {
 		DateTime dataVenda = new DateTime(2014, 07, 31, 0, 0);
 		comissao =  new ComissaoImpl(dataCalculo);
 		Venda venda = new Venda(dataVenda, new BigDecimal("100"));
-		BigDecimal valorComissaoCorretor = comissao.calcular(venda, ComissionadoTipo.CORRETOR);
-		BigDecimal valorComissaoCorretora = comissao.calcular(venda, ComissionadoTipo.CORRETORA);
-		BigDecimal valorComissaoGerente = comissao.calcular(venda, ComissionadoTipo.GERENTE_CORRETORA);
+		BigDecimal valorComissaoCorretor = comissao.calcular(venda, new Corretor());
+		BigDecimal valorComissaoCorretora = comissao.calcular(venda, new Corretora());
+		BigDecimal valorComissaoGerente = comissao.calcular(venda, new Gerente());
 		assertEquals(new BigDecimal("2.00"), valorComissaoCorretor);
 		assertEquals(new BigDecimal("5.00"), valorComissaoCorretora);
 		assertEquals(new BigDecimal("3.00"), valorComissaoGerente);
@@ -36,9 +38,9 @@ public class ComissaoTest {
 		DateTime dataVenda = new DateTime(2014, 12, 9, 0, 0);
 		comissao =  new ComissaoImpl(dataCalculo);
 		Venda venda = new Venda(dataVenda, new BigDecimal("100"));
-		BigDecimal valorComissaoCorretor = comissao.calcular(venda, ComissionadoTipo.CORRETOR);
-		BigDecimal valorComissaoCorretora = comissao.calcular(venda, ComissionadoTipo.CORRETORA);
-		BigDecimal valorComissaoGerente = comissao.calcular(venda, ComissionadoTipo.GERENTE_CORRETORA);
+		BigDecimal valorComissaoCorretor = comissao.calcular(venda, new Corretor());
+		BigDecimal valorComissaoCorretora = comissao.calcular(venda, new Corretora());
+		BigDecimal valorComissaoGerente = comissao.calcular(venda, new Gerente());
 		assertEquals(new BigDecimal("0"), valorComissaoCorretor);
 		assertEquals(new BigDecimal("0"), valorComissaoCorretora);
 		assertEquals(new BigDecimal("0"), valorComissaoGerente);
@@ -50,9 +52,9 @@ public class ComissaoTest {
 		DateTime dataVenda = new DateTime(2015, 1, 1, 0, 0);
 		comissao =  new ComissaoImpl(dataCalculo);
 		Venda venda = new Venda(dataVenda, new BigDecimal("100"));
-		BigDecimal valorComissaoCorretor = comissao.calcular(venda, ComissionadoTipo.CORRETOR);
-		BigDecimal valorComissaoCorretora = comissao.calcular(venda, ComissionadoTipo.CORRETORA);
-		BigDecimal valorComissaoGerente = comissao.calcular(venda, ComissionadoTipo.GERENTE_CORRETORA);
+		BigDecimal valorComissaoCorretor = comissao.calcular(venda, new Corretor());
+		BigDecimal valorComissaoCorretora = comissao.calcular(venda, new Corretora());
+		BigDecimal valorComissaoGerente = comissao.calcular(venda, new Gerente());
 		assertEquals(new BigDecimal("3.00"), valorComissaoCorretor);
 		assertEquals(new BigDecimal("4.00"), valorComissaoCorretora);
 		assertEquals(new BigDecimal("3.00"), valorComissaoGerente);
@@ -64,9 +66,9 @@ public class ComissaoTest {
 		DateTime dataVenda = new DateTime(2015, 1, 1, 0, 0);
 		comissao =  new ComissaoImpl(dataCalculo);
 		Venda venda = new Venda(dataVenda, new BigDecimal("100"));
-		BigDecimal valorComissaoCorretor = comissao.calcular(venda, ComissionadoTipo.CORRETOR);
-		BigDecimal valorComissaoCorretora = comissao.calcular(venda, ComissionadoTipo.CORRETORA);
-		BigDecimal valorComissaoGerente = comissao.calcular(venda, ComissionadoTipo.GERENTE_CORRETORA);
+		BigDecimal valorComissaoCorretor = comissao.calcular(venda, new Corretor());
+		BigDecimal valorComissaoCorretora = comissao.calcular(venda, new Corretora());
+		BigDecimal valorComissaoGerente = comissao.calcular(venda, new Gerente());
 		assertEquals(new BigDecimal("0"), valorComissaoCorretor);
 		assertEquals(new BigDecimal("0"), valorComissaoCorretora);
 		assertEquals(new BigDecimal("0"), valorComissaoGerente);

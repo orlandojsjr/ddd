@@ -6,8 +6,6 @@ import org.joda.time.DateTime;
 import org.joda.time.Days;
 
 import br.com.comissionamento.model.comissionado.Comissionado;
-import br.com.comissionamento.model.comissionado.ComissionadoTipo;
-import br.com.comissionamento.model.tabela.TabelaComissionamentoRepository;
 import br.com.comissionamento.model.venda.Venda;
 
 public class ComissaoImpl implements Comissao {
@@ -18,13 +16,11 @@ public class ComissaoImpl implements Comissao {
 		this.dataCalculo = dataCalculo;
 	}
 
-	public BigDecimal calcular(Venda venda, ComissionadoTipo comissionadoTipo) {
+	public BigDecimal calcular(Venda venda, Comissionado comissionado) {
 		
 		if(!calculoLiberado(venda.getData())) return new BigDecimal("0");
-		
-		BigDecimal porcentagem = TabelaComissionamentoRepository.getPorcentagem(venda.getData(), comissionadoTipo);
 
-		return new BigDecimal(venda.getValor().toString()).multiply(porcentagem);
+		return new BigDecimal(venda.getValor().toString()).multiply(comissionado.getPorcentagem(venda.getData()));
 	}
 	
 	private boolean calculoLiberado(DateTime dataVenda) {
