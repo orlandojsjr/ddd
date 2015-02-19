@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 
 import org.joda.time.DateTime;
 
-
 public interface Comissionado {
 	
 	public BigDecimal getPorcentagem(DateTime dataVenda);
