@@ -2,22 +2,10 @@ package br.com.comissionamento.model.comissionado;
 
 import java.math.BigDecimal;
 
+import org.joda.time.DateTime;
 
-public class Comissionado {
+public interface Comissionado {
 	
-	private BigDecimal porcentagem;
-	private ComissionadoTipo tipo;
-	
-	public Comissionado(BigDecimal porcentagem, ComissionadoTipo tipo) {
-		this.porcentagem = porcentagem;
-		this.tipo = tipo;
-	}
-
-	public BigDecimal getPorcentagem() {
-		return porcentagem;
-	}
-
-	public ComissionadoTipo getTipo() {
-		return tipo;
-	}
+	public BigDecimal getPorcentagem(DateTime dataVenda);
 }
+

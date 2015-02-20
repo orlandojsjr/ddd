@@ -1,18 +1,20 @@
 package br.com.comissionamento.model.venda;
 
+import java.math.BigDecimal;
+
 import org.joda.time.DateTime;
 
 public class Venda {
 	
 	private DateTime data;
-	private Double valor;
+	private BigDecimal valor;
 	
-	public Venda(DateTime data, Double valor) {
+	public Venda(DateTime data, BigDecimal valor) {
 		this.data = data;
 		this.valor = valor;
 	}
 	
-	public Double getValor() {
+	public BigDecimal getValor() {
 		return this.valor;
 	}
 
@@ -20,3 +22,4 @@ public class Venda {
 		return data;
 	}
 }
+

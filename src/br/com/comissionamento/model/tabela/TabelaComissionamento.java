@@ -1,18 +1,25 @@
 package br.com.comissionamento.model.tabela;
 
-import java.util.List;
+import java.math.BigDecimal;
 
-import br.com.comissionamento.model.comissionado.Comissionado;
+import org.joda.time.DateTime;
 
 public class TabelaComissionamento {
 	
-	private List<Comissionado> comissionados;
+	private BigDecimal porcentagem;
+	private PeriodoVigencia periodoVigencia;
 	
-	public TabelaComissionamento(List<Comissionado> comissionados) {
-		this.comissionados = comissionados;
+	public TabelaComissionamento(BigDecimal porcentagem, PeriodoVigencia periodoVigencia) {
+		this.porcentagem = porcentagem;
+		this.periodoVigencia = periodoVigencia;
 	}
 
-	public List<Comissionado> getComissionados() {
-		return comissionados;
-	}	
+	public BigDecimal getPorcentagem() {
+		return porcentagem;
+	}
+
+	public boolean isVigente(DateTime dataVenda) {
+		return periodoVigencia.isVigente(dataVenda);
+	}
 }
+
